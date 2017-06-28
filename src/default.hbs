@@ -1,0 +1,16 @@
+---
+class: #string
+deep: "modal"
+ajax: #"ajax/"
+---
+<aside class="module{{#if partial-name}} partial{{/if}} controller{{#if class}} {{class}}{{/if}}" data-module="gp-module-ui-modal"{{#if partial-name}} data-partial="{{{partial-name}}}"{{/if}} data-controller="gp-module-ui-modal" data-deep="{{deep}}"{{#if ajax}} data-ajax="{{ajax}}"{{/if}} {{#block "attributes"}}{{/block}}>
+  {{#block "spinner"}}{{/block}}
+  {{{mixin "gp-module-ui-link" class="close" deep=deep url="#" title="&times;"}}}
+  <div class="content">
+    <div class="document">
+      {{#block "content"}}
+
+      {{/block}}
+    </div>
+  </div>
+</aside>
