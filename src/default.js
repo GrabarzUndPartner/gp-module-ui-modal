@@ -44,7 +44,7 @@ export default ContentManager.extend({
             .on(this.model.viewport.EVENT_TYPES.SCROLL, this.onScroll);
 
         browserHistory.register(this.model.deep, function(value) {
-            if(value !== null) {
+            if (value !== null) {
                 addBodyScrollbarOffset();
                 document.documentElement.classList.add('js-modal-active');
                 this.model.open = true;
@@ -54,7 +54,7 @@ export default ContentManager.extend({
                 removeBodyScrollbarOffset();
                 document.documentElement.classList.remove('js-modal-active');
                 this.model.open = false;
-                (cleanup || function(){})();
+                (cleanup || function() {})();
             }
         }.bind(this));
     },
@@ -88,7 +88,7 @@ function onScroll() {
 function clickOutside(e) {
     e.preventDefault();
 
-    if(!e.target.closest('.content', this.el)) {
+    if (!e.target.closest('.content', this.el)) {
         $('>a.close', this.el).trigger('click');
     }
 }
